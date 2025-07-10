@@ -16,3 +16,5 @@ This application is deployed to AWS using Elastic Beanstalk.
 ### Access
 
 - Application URL is output at the end of the deploy job (e.g., `https://<env>.elasticbeanstalk.com`).
+
+![Infrastructure Diagram](../img/diagram.png)

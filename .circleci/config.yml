@@ -51,7 +51,9 @@ jobs:
             eb deploy --staged --label $CIRCLE_SHA1
             echo "Deployment complete."
             echo "Application URL:"
-            eb status | grep "CNAME:" | sed 's/CNAME: //;s/^/https:\/\//'
+            eb status
+            CNAME=$(eb status | grep "CNAME:" | awk '{print $2}')
+            echo "http://$CNAME"
 
 workflows:
   version: 2
