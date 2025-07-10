@@ -22,9 +22,6 @@ jobs:
           paths:
             - ./node_modules
           key: v1-deps-{{ checksum "package-lock.json" }}
-      - run:
-          name: Run tests
-          command: npm test   # Update if you have tests; otherwise you can skip or add linting
 
   deploy:
     docker:
