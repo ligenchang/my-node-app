@@ -44,14 +44,9 @@ jobs:
       - run:
           name: Deploy to Elastic Beanstalk
           command: |
-            zip -r app.zip * .[^.]* -x "node_modules/*"
-            aws elasticbeanstalk create-application-version \
-              --application-name your-eb-app-name \
-              --version-label $CIRCLE_SHA1 \
-              --source-bundle S3Bucket=your-s3-bucket-name,S3Key=app.zip
-            aws elasticbeanstalk update-environment \
-              --environment-name your-eb-env-name \
-              --version-label $CIRCLE_SHA1
+            eb init $EB_APP_NAME --platform node.js --region $AWS_DEFAULT_REGION
+            eb use $EB_ENV_NAME
+            eb deploy --staged --label $CIRCLE_SHA1
 
 workflows:
   version: 2
