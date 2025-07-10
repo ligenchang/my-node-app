@@ -39,3 +39,5 @@ AWS_DEFAULT_REGION
 EB_APP_NAME
 
 EB_ENV_NAME
+
+![CI Pipeline](../img/ci.png)
