@@ -49,6 +49,9 @@ jobs:
             eb init $EB_APP_NAME --platform node.js --region $AWS_DEFAULT_REGION
             eb use $EB_ENV_NAME
             eb deploy --staged --label $CIRCLE_SHA1
+            echo "Deployment complete."
+            echo "Application URL:"
+            eb status | grep CNAME | awk '{print "https://"$2}'
 
 workflows:
   version: 2
