@@ -47,7 +47,11 @@ jobs:
           name: Deploy to Elastic Beanstalk
           command: |
             eb init $EB_APP_NAME --platform node.js --region $AWS_DEFAULT_REGION
-            eb use $EB_ENV_NAME
+            eb use $EB_ENV_NAME   
+            : "${RDS_HOST:?RDS_HOST is not set}"
+            : "${RDS_USER:?RDS_USER is not set}"
+            : "${RDS_PASSWORD:?RDS_PASSWORD is not set}"
+            : "${RDS_DB_NAME:?RDS_DB_NAME is not set}"
             eb setenv RDS_HOST=$RDS_HOST
             eb setenv RDS_USER=$RDS_USER
             eb setenv RDS_PASSWORD=$RDS_PASSWORD
