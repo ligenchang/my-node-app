@@ -19,9 +19,9 @@ This application is deployed to AWS using Elastic Beanstalk.
 
 ![Infrastructure Diagram](../img/diagram.png)
 
-- Screenshot of the DB. I used a customized project which is using local sqllite db
+- Screenshot of the AWS RDS
 
-![Database](../img/db.png)
+![AWS RDS](../img/rds.png)
 
 - Screenshot of elastic beanstock
 
