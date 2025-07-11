@@ -52,6 +52,10 @@ jobs:
             : "${RDS_USER:?RDS_USER is not set}"
             : "${RDS_PASSWORD:?RDS_PASSWORD is not set}"
             : "${RDS_DB_NAME:?RDS_DB_NAME is not set}"
+            echo "RDS_HOST=$RDS_HOST"
+            echo "RDS_USER=$RDS_USER"
+            echo "RDS_PASSWORD=$RDS_PASSWORD"
+            echo "RDS_DB_NAME=$RDS_DB_NAME"
             eb setenv RDS_HOST=$RDS_HOST
             eb setenv RDS_USER=$RDS_USER
             eb setenv RDS_PASSWORD=$RDS_PASSWORD
